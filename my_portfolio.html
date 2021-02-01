@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link href="css/style.css" rel="stylesheet" media="all">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav><h1>Kha Nguyen</h1></nav>
+        <main>
+			  <video autoplay muted loop id="myVideo">
+				<source src="videos/skyline.mp4" type="video/mp4">
+			  </video>
+		</main>
+		<div id="sidebar">
+		<h2>CV</h2>
+			<div class="timeline-area">
+				<div class="timeline-content">
+					<h3>Katherinenschule</h3>
+					<h4>Werkrealschule</h4>
+					<h5>2007-20013</h5>
+				</div>
+				<div class="timeline-content">
+					<h3>John-F.-Kennedy-Schule</h3>
+					<h4>Wirtschaftsgymnasium</h4>
+					<h5>2013-2017</h5>
+				</div>
+				<div class="timeline-content">
+					<h3>Malteser Hilfsdienst</h3>
+					<h4>BFD Ambulante Pflege</h4>
+					<h5>2017-2018</h5>
+				</div>
+				<div class="timeline-content">
+					<h3>SRH Fachschulen</h3>
+					<h4>Ausbildung Informatiker für Game- und Multimediaentwicklung</h4>
+					<h5>2018-2020</h5>
+				</div>
+				<div class="timeline-content">
+					<h3>Haug und Partner</h3>
+					<h4>Praktikum im Bereich Webentwicklung</h4>
+					<h5>15.10.2020 bis 15.4.2020</h5>
+				</div>
+			</div>
+		</div>
+        <div id="content1">
+			<h2>About me</h2>
+			<img  class="about-me" src="bilder/kha.png">
+		</div>
+        <div id="content2">
+			<h2>Projects</h2>
+				<div class="slideshow-container">
+					<div class="mySlides fade">
+					  <img  class="project" style="width: 20rem;" src="bilder/logo.jpg">
+					  <div class="text">OnlineCasino</div>
+					</div>
+
+					<div class="mySlides fade">
+					  <img  class="project" style="width: 20rem;" src="bilder/logo.jpg">
+					  <div class="text">Retrogames</div>
+					</div>
+
+					<div class="mySlides fade">
+					  <img  class="project" style="width: 20rem;" src="bilder/logo.jpg">
+					  <div class="text">Webshop</div>
+					</div>
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+					<div class="dotSide" style="text-align:center">
+					  <span class="dot" onclick="currentSlide(1)"></span> 
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					</div>
+		</div>
+        <div id="content3">
+			<h2>IT knowledges</h2>
+			<img class="it-knowledge" style="width: 25rem;" src="bilder/it.jpg">
+		</div>
+        <footer>
+			<div class="footer-grid-content">
+				  <div class="grid-item">AGBs</div>
+				  <div class="grid-item">Datenschutz</div>
+				  <div class="grid-item">Impressum</div>
+			</div>
+		</footer>
+    </div>
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+</script>
+</body>
+</html>
